@@ -7,10 +7,10 @@ export class Topic {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({nullable: false, unique: true})
   title: string;
 
-  @Column()
+  @Column({nullable: false, unique: true})
   description: string;
 
   @OneToMany(type => Comment, comment => comment.topic)
