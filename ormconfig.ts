@@ -1,4 +1,6 @@
-import { User } from 'src/entities/user.entity'
+import { Topic } from 'src/entities/topic.entity';
+import { User } from 'src/entities/user.entity';
+import { Comment } from 'src/entities/comment.entity';
 import { MysqlConnectionOptions } from 'typeorm/driver/mysql/MysqlConnectionOptions'
 
 const config: MysqlConnectionOptions = {
@@ -8,7 +10,7 @@ const config: MysqlConnectionOptions = {
   database: 'nestapp',
   username: 'nestappuser',
   password: 'secret123',
-  entities: [User],
+  entities: [User, Comment, Topic],
   synchronize: true,
   logging: true
 }
