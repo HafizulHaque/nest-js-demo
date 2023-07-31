@@ -1,15 +1,16 @@
 import { User } from 'src/entities/user.entity'
-import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions'
+import { MysqlConnectionOptions } from 'typeorm/driver/mysql/MysqlConnectionOptions'
 
-const config: PostgresConnectionOptions = {
-  type: 'postgres',
-  database: 'testDB',
+const config: MysqlConnectionOptions = {
+  type: 'mysql',
   host: 'localhost',
-  port: 5432,
-  username: 'postgres',
-  password: 'postgres',
+  port: 3306,
+  database: 'nestapp',
+  username: 'nestappuser',
+  password: 'secret123',
   entities: [User],
-  synchronize: true
+  synchronize: true,
+  logging: true
 }
 
 export default config;

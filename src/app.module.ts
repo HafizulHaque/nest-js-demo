@@ -8,9 +8,9 @@ import config from 'ormconfig';
 
 @Module({
   imports: [
+    TypeOrmModule.forRoot(config),
     UserModule, 
     CommentModule,
-    TypeOrmModule.forRoot(config)
   ],
   controllers: [AppController],
   providers: [AppService],
